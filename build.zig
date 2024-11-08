@@ -165,7 +165,7 @@ pub fn build(b: *std.Build) void {
         .HAVE_STRUCT__STATI64 = null,
         .HAVE_SYSCONF = null,
         .HAVE_SYS_ENDIAN_H = have(t.os.tag == .linux),
-        .HAVE_SYS_MMAN_H = 1,
+        .HAVE_SYS_MMAN_H = have(t.os.tag == .linux or t.os.tag == .macos),
         .HAVE_SYS_PARAM_H = null,
         .HAVE_SYS_RESOURCE_H = null,
         .HAVE_SYS_STAT_H = 1,
